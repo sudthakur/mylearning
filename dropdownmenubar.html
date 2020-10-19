@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        li{float: left;}
+        
+        li a, .dropbtn{
+            display: block;
+            text-decoration: none;
+            padding: 10px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        li a:hover, .dropdown:hover .dropbtn{
+            background-color: tomato;
+            color: white;
+        }
+
+        li.dropdown{
+            display: block;
+        }
+
+        .drop-cont{
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 200px;
+            box-shadow: 0px 10px 20px 0px rgba(120,120,220,0.8);
+            z-index: 1;
+        }
+
+        .drop-cont a{
+            display: block;
+            padding: 10px 20px;
+            background-color: black;
+            text-decoration: none;
+            text-align: left;
+
+        }
+
+        .drop-cont a:hover{background-color: tomato;
+            color: white;}
+
+        .dropdown:hover .drop-cont{
+            display: block;
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">About</a></li>
+        <li class="dropdown">
+            <a href="" class="dropbtn">Services</a>
+            <div class="drop-cont">
+                    <a href="">Service1</a>
+                    <a href="">Service2</a>
+                    <a href="">Service3</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a class="dropbtn" href="">Donate</a>
+            <div class="drop-cont">
+                <a href="">Donate1</a>
+                <a href="">Donate2</a>
+                <a href="">Donate3</a>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
