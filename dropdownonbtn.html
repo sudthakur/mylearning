@@ -21,9 +21,10 @@
         .drop-cont{
             display: none;
             position: absolute;
+            right: 0;
             background-color: wheat;
             box-shadow: 0px 10px 12px 0px rgba(200, 150, 150, 0.8);
-            max-width: 200px;
+            min-width: 200px;
             z-index: 1;
         }
 
@@ -47,7 +48,7 @@
     </style>
 </head>
 <body>
-    <div class="dropdown">
+    <div class="dropdown" style="float: right;">
         <button class="btn">Click Me</button>
         <div class="drop-cont">
             <a href="#">Link1</a>
@@ -57,5 +58,6 @@
             <a href="#">Link1</a>
         </div>
     </div>
+    <p><strong>Note:</strong> We use href="#" for test links. In a real web site this would be URLs.</p>
 </body>
 </html>
