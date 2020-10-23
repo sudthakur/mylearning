@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            border-radius: 5px;
+            background-color: lightgray;
+            padding: 20px;
+        }
+
+        input[type="text"],input[type="email"],select,textarea{
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid black;
+            resize: vertical;
+        }
+
+        label{
+            padding: 10px 10px 10px 0px;
+            display: block;
+        }
+        .row{
+            padding: 10px 10px;
+            margin: 5px;
+        }
+        .col-25{
+            width: 25%;
+            float: left;
+            margin-top: 5px;
+        }
+        .col-75{
+            width: 75%;
+            float: left;
+            margin-top: 5px;
+        }
+        input[type="submit"]{
+            float: right;
+            width: 70px;
+            height: 40px;
+            border-radius: 4px;
+            background-color: lightgreen;
+            cursor: pointer;
+        }
+        .row::after{
+            clear: both;
+            display: table;
+            content: "";
+        }
+
+        @media screen and (max-width: 600px){
+            .col-25,.col-75,input[type="button"]{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Responsive Form</h2>
+<p>Resize the browser window to see the effect. When the screen is less than 600px wide,
+    make the two columns stack on top of each other instead of next to each other.</p>
+    <div class="container">
+        <form target="_blank" method="GET" action="/action_page.php">
+        <div class="row">
+            <div class="col-25">
+                <label for="name">Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="name" name="name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="email">Email</label>
+            </div>
+            <div class="col-75">
+                <input type="email" id="email" name="email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="country">country</label>
+            </div>
+            <div class="col-75">
+                <select id="country" name="country">
+                    <option value="India">India</option>
+                    <option value="America">America</option>
+                    <option value="Australia">Australia</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="gender">Gender</label>
+            </div>
+            <div class="col-75">
+                <input type="radio" id="male" value="male" name="gender">Male
+                <input type="radio" id="female" value="female"name="gender">Female
+                <input type="radio" id="others" value="others"name="gender">Others
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="address">Address</label>
+            </div>
+            <div class="col-75">
+                <textarea id="address" name="address" draggable="false"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" id="btn" value="Submit">
+        </div>
+    </form>
+    </div>
+</body>
+</html>

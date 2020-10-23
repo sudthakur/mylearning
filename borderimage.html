@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#borderimg1 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(Ganesh.jpg) 50 round;
+}
+
+#borderimg2 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(Ganesh.jpg) 20% round;
+}
+
+#borderimg3 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(Ganesh.jpg) 30% stretch;
+}
+
+.gradient1{
+    background-image: linear-gradient(to right,red,yellow);
+    width: 600px;
+    height: 200px;
+    }
+
+.test1{
+    width: 150px;
+    border: 1px solid black;
+    word-break: keep-all;
+    writing-mode: sideways-lr;
+}
+
+</style>
+</head>
+<body>
+
+<h1>The border-image Property</h1>
+
+<p id="borderimg1">border-image: url(border.png) 50 round;</p>
+<p id="borderimg2">border-image: url(border.png) 20% round;</p>
+<p id="borderimg3">border-image: url(border.png) 30% round;</p>
+
+<p><strong>Note:</strong> Internet Explorer 10, and earlier versions, do not support the border-image property.</p>
+
+
+<div class="gradient1"></div>
+
+<p class="test1">This paragraph contains some text. This line will-break-at-hyphens.</p>
+
+</body>
+</html>
