@@ -1,0 +1,37 @@
+<script>
+// 'use strict'
+// console.log(this);
+
+function sum(){
+    var add=2+3;
+    // console.log("Sum of 2 no is : "+add);
+    // console.log(this);
+}
+
+console.log(typeof([]));
+sum();
+
+const obj={
+    name:'sudarshan',
+    sirname:'thakur',
+    sum:function(){
+        var add=4+5;
+        // console.log(add);
+        // console.log(this);
+
+        const child = function (){
+            var name="Bittoo";
+            // console.log("child method console "+name);
+            // console.log(this);
+        }
+
+        child();
+    }
+}
+
+obj.sum();
+
+console.log(typeof(sum));
+console.log(typeof(obj));
+console.log(typeof(obj.sum()));
+</script>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1" style="width: 200px;height: 100px;border: 1px solid springgreen;" onmouseover="hoveron()"
+        onmouseout="hoverout()">
+    </div>
+    <button id="btn" value="click">Click</button>
+</body>
+
+<script>
+    "use strict"
+    //-------------Closure and arguments in one
+    // function numer(){
+    //     console.log(arguments.length);
+    //     let a=arguments[0];
+    //     let b=arguments[1];
+
+    //     const obj1={
+    //         name:"sud"
+    //     }
+
+    //     function sum(){
+    //         return (a+b+obj1.name);
+    //     }
+
+    //     return sum();
+    // }
+
+    // let c=numer(10,20);
+    // console.log(c);
+
+    //-----------exception handling
+    // function divide(){
+    //     let num=arguments[0];
+    //     let den=arguments[1];
+
+    //     try{
+    //         if(den==0){
+    //             throw{
+    //                 error:"Divide by Zero",
+    //                 message:"Denominator cant be zero"
+    //             }
+    //         }else{
+    //             document.write((num/den).toFixed(2));
+    //         }
+    //     }
+    //     catch(e){
+    //         document.write(e.error+"<br/>");
+    //         document.write(e.message);
+    //     }
+    //     finally{
+    //         document.write("<br/>I am finally executed")
+    //     }
+    // }
+    // divide(100,3);
+
+    //---------Attributes
+    // const hoveron = ()=>{
+    //     document.getElementById("div1").style.border='1px solid red';
+    // }
+    // const hoverout = ()=>{
+    //     document.getElementById("div1").style.border='1px solid springgreen';
+    // }
+
+    // document.getElementById("div1").onclick='clickFunc';
+
+    // document.getElementById("div1").ondblclick='clickdblFunc';
+
+    // onclick=function (){
+    //     document.getElementById("div1").style.backgroundColor="black";
+    // }
+
+    // ondblclick=function(){
+    //     document.getElementById("div1").style.backgroundColor="white";
+    // }
+
+    // document.getElementById('btn').addEventListener("click",disdate);
+
+    // function disdate(){
+    //     var d=new Date();
+    //     document.getElementById("div1").innerHTML=d;
+    // }
+
+    //-----------------Object cant be immutable with const only they must use freeze() function to be mmutable.
+
+    // const car ={
+    //     name:'Maruti',
+    //     milage:20
+    // }
+    // car.milage=30;
+    // document.write(car.milage);
+
+    // const car2 =Object.freeze({
+    //     name:'Maruti',
+    //     milage:20
+    // })
+    // car.milage=30;
+    // document.write(car2.milage);
+
+    // function sum(...args){
+    //     let rs=0;
+    //     document.write(args.length)
+    //     args.forEach(function(ag){
+    //         rs+=ag;
+    //         });
+    //         return rs;
+    // }
+
+    // let arr=[1,2,3,4,5];
+    // let add = sum(...arr);
+    // document.write(add);
+
+    // function sum(a,b,c,d){
+    //     return a+b+c+d;
+    // }
+
+    // let arr=new Array(2,3,4,5,6,7);
+    // let add=sum(...arr);
+    // document.write(add);
+
+    // let arr=[1,2,3,4,5,6];
+    // let arr1=[2,9,...arr,5,6,7];
+
+    // document.write(arr+"</br>");
+    // document.write(arr1+"</br>");
+
+    // document.write(Math.max(...arr1)+"</br>");
+
+    // var x=5;
+    // document.write(x.toString(2));
+
+    //---------------
+    // function employee(fname, lname, sal) {
+
+    //     //private field
+    //     var privatesalary = sal;
+
+    //     //public field
+    //     this.fname = fname;
+    //     this.lname = lname;
+
+    //     //private function
+    //     var privategetname = function () {
+    //         return privatesalary;
+    //     }
+
+    //     //privileged function
+    //     this.getfullname = function () {
+    //         return privategetname();
+    //     }
+
+    //     //public function
+        
+    // }
+
+    // employee.prototype.publicgetfullname = function () {
+    //         return this.getfullname();
+    //     }
+
+    // let emp = new employee("Sud", "thakur", 200000);
+
+    // document.write(emp.publicgetfullname()+"</br>");
+
+    // document.write(emp.getfullname());
+
+    // document.write(emp.privatesalary);
+
+    // document.write(emp.privategetname());
+
+//----------------------------Properties in Javascript
+
+// function employee(age,name){
+//     var _age=age;
+//     var _name=name;
+
+//     Object.defineProperty(this,"age",{
+//         get:function(){
+//             return _age;
+//         },
+
+//         set:function(val){
+//             if(val < 1 || val > 100){
+//                 alert("Inavlid Age " +val);
+//             }else{
+//                 _age=val;
+//             }
+//         }
+//     })
+
+//     Object.defineProperty(this,"name",{
+//         get:function(){
+//             return _name;
+//         },
+
+//         set:function(val){
+//             _name=val;
+//         }
+//     })
+// }
+
+// var emp=new employee(12,"sud");
+
+// emp.age=90;
+
+// emp.name="sudarshan"
+
+// document.write(emp.age+ " " +emp.name);
+
+//--------------Static field
+
+// function shape(shapename){
+
+//     this.shapename=shapename;
+
+//     shape.count=++shape.count || 1;
+
+//     shape.staticfunction=function(){
+//         return shape.count;
+//     }
+// }
+
+// let a=new shape("circle");
+
+// let b=new shape("square")
+
+// let c=new shape("rect")
+
+// document.write("Count value :"+shape.staticfunction());
+
+
+//---------------Prototype in JS
+
+const employee=function (name){
+    this.name=name;
+}
+
+employee.prototype.getname=function(){
+    return this.name;
+}
+
+
+function peremployee(sal){
+    this.sal=sal;
+}
+
+employee.prototype.getsal=function(){
+    return this.sal;
+}
+
+let a =new employee("sud");
+
+
+
+//inheritance link
+peremployee.prototype=a;
+
+
+let pa=new peremployee(20000);
+
+console.log(a.getname());
+
+console.log(pa.getname());
+
+console.log(pa.getsal());
+
+</script>
+
+</html>
